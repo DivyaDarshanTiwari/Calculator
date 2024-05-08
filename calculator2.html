@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        h2 {
+            color: cornflowerblue;
+            text-align: center;
+        }
+
+        table {
+            border-collapse: collapse;
+            margin: 0 auto;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid black;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input[type="number"] {
+            width: 100px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            background-color: cornflowerblue;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #4c8dff;
+        }
+
+        #result, #multiply, #divide, #subtract {
+            text-align: center;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>This is a calculator</h2>
+    <table>
+        <form action="">
+            <tr>
+                <th>
+                    <label for="fno">First Number</label>
+                </th>
+                <td>
+                    <input type="number" name="fno" id="fno"><br><br>
+                </td>
+            </tr>
+            <tr>
+                <th>
+                    <label for="sno">Second Number</label>
+                </th>
+                <td>
+                    <input type="number" name="sno" id="sno"> <br>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <button type="button" onclick="myadd()">Calculate Addition</button>
+                    <button type="button" onclick="mysub()">Calculate Subtraction</button>
+                    <button type="button" onclick="mymul()">Calculate Multiplication</button>
+                    <button type="button" onclick="mydiv()">Calculate Division</button>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <p id="multiply"></p>
+                    <p id="divide"></p>
+                    <p id="subtract"></p>
+                    <p id="result"></p> <br>
+                </td>
+            </tr>
+        </form>
+    </table>
+
+    <script>
+        function myadd() {
+            var num1 = document.getElementById("fno");
+            var num2 = document.getElementById("sno");
+            var sum = parseFloat(num1.value) + parseFloat(num2.value);
+
+            document.getElementById("result").textContent = "Result (Addition): " + sum;
+        }
+        function mysub() {
+            var num1 = document.getElementById("fno");
+            var num2 = document.getElementById("sno");
+            var sub = parseFloat(num1.value) - parseFloat(num2.value);
+
+            document.getElementById("subtract").textContent = "Result (Subtraction): " + sub;
+        }
+        function mymul() {
+            var num1 = document.getElementById("fno");
+            var num2 = document.getElementById("sno");
+            var mul = parseFloat(num1.value) * parseFloat(num2.value);
+
+            document.getElementById("multiply").textContent = "Result (Multiplication): " + mul;
+        }
+        function mydiv() {
+            var num1 = document.getElementById("fno");
+            var num2 = document.getElementById("sno");
+            var div = parseFloat(num1.value) / parseFloat(num2.value);
+
+            document.getElementById("divide").textContent = "Result (Division): " + div.toFixed(2);
+        }
+    </script>
+</body>
+</html>
